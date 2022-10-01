@@ -78,3 +78,51 @@ where ename like '%M%';
 select ename from emp
 where ename NOT like '%M%';
 ```
+
+> Display name with exactly 4 alphabets
+```sql
+select ename from emp
+where enmae like '____';
+```
+
+> Display name with second letter as 'L'
+
+```sql
+select ename from emp
+where ename like '_L%';
+```
+
+> Display name with fourth letter as 'M'
+
+```sql
+select ename from emp
+where ename like '___M%';
+```
+
+> Display name with exactly 2 'L'
+```sql
+select enmae from emp
+where ename like '%LL%';
+```
+
+> Name start with 'J' and ends with 'S'
+```sql
+select ename from emp 
+where ename like 'J%S';
+```
+
+- **Display nth row**
+```sql
+-- assume nth row as 4th row
+select * from emp
+where rownum <= 4 -- rownum doesn't work with greater than
+minus -- eliminates common records
+select * from emp 
+where rownum <= 3;
+```
+
+```sql
+select * from (
+    select rownum r, emp.* from emp
+) where r = 4;
+```
