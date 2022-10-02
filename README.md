@@ -203,7 +203,8 @@ where e1.mgr=e2.empno and e1.hiredate<e2.hiredate;
 ---
 - **Left join**
 <br>
-1. All rows from left side table
-2. Matching value row from right side table
-3. Null values in place of Non matching rows in other table
+
+    - All rows from left side table
+    - Matching value row from right side table
+    - Null values in place of Non matching rows in other table
 
