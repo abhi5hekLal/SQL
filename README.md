@@ -126,3 +126,18 @@ select * from (
     select rownum r, emp.* from emp
 ) where r = 4;
 ```
+
+- **Union vs Union all**
+<br>
+can be used for single or multiple columns of same data type
+
+```sql
+select ename from emp1
+union   -- eliminates all duplicate values and displays only unique ename
+select ename from emp2;
+
+select ename from emp1
+union all   -- does not eliminates duplicate values.
+select ename from emp2;
+
+```
