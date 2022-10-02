@@ -171,3 +171,40 @@ where e.deptno=d.deptno
 group by deptno;
 ```
 
+---
+- **Self Join**
+<br>
+Compare values of the same table
+
+- **Display employees and their mangers**
+
+```sql
+select e1.ename "employee" e2.enmae "manager"
+from emp e1, emp e2
+where e1.mgr=e2.empno;
+```
+
+- **Employee with sal greater than manager salary**
+
+```sql
+select e1.ename, e1.sal 
+from emp e1, emp e2
+where e1.mgr=e2.empno and e1.sal > e2.sal;
+```
+
+- **Display employee details who have joined before their manager**
+
+```sql
+select e1.ename 
+from emp e1, emp e2
+where e1.mgr=e2.empno and e1.hiredate<e2.hiredate;
+```
+
+---
+- **Left join**
+<br>
+
+    - All rows from left side table
+    - Matching value row from right side table
+    - Null values in place of Non matching rows in other table
+
