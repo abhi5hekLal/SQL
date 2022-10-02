@@ -127,6 +127,8 @@ select * from (
 ) where r = 4;
 ```
 
+---
+
 - **Union vs Union all**
 <br>
 can be used for single or multiple columns of same data type
@@ -141,3 +143,31 @@ union all   -- does not eliminates duplicate values.
 select ename from emp2;
 
 ```
+
+---
+
+- **Inner Join**
+
+```sql
+select ename, e.deptno, sal 
+from emp e, dept d
+where e.deptno = d.deptno;
+```
+
+- **Display employees who are working in Location Chicago from emp and dept table**
+
+```sql
+select ename 
+from emp e, dept d 
+where e.deptno = d.deptno and LOC='Chicago';
+```
+
+- **Display the department name and total salaries from each department.**
+
+```sql
+select dname, sum(sal)  --Missing one department in either of the table
+from emp e, dept d
+where e.deptno=d.deptno 
+group by deptno;
+```
+
