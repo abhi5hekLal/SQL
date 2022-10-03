@@ -1,4 +1,4 @@
-## Sql Practice Problems
+# Sql Practice Problems
 <br>
 
 - **Second highest salary of an employee**
@@ -49,68 +49,69 @@ from emp
 group by ename
 having count(*) > 1; -- can't use where with group by
 ```
-
-- **Pattern matching**
-> Display names starting with 'M'
+---
+### Pattern matching
+- **Display names starting with 'M'**
 
 ```sql
 select ename from emp
 where ename like 'M%';
 ```
 
-> Display name ending with 'M'
+- **Display name ending with 'M'**
 
 ```sql
 select ename from emp
 where ename like '%M';
 ```
 
-> Display names having letter 'M'.
+- **Display names having letter 'M'.**
 
 ```sql
 select ename from emp
 where ename like '%M%';
 ```
 
-> Display name that don't contain any 'M'
+- **Display name that don't contain any 'M'**
 
 ```sql
 select ename from emp
 where ename NOT like '%M%';
 ```
 
-> Display name with exactly 4 alphabets
+- **Display name with exactly 4 alphabets**
 ```sql
 select ename from emp
 where enmae like '____';
 ```
 
-> Display name with second letter as 'L'
+- **Display name with second letter as 'L'**
 
 ```sql
 select ename from emp
 where ename like '_L%';
 ```
 
-> Display name with fourth letter as 'M'
+- **Display name with fourth letter as 'M'**
 
 ```sql
 select ename from emp
 where ename like '___M%';
 ```
 
-> Display name with exactly 2 'L'
+- **Display name with exactly 2 'L'**
 ```sql
 select enmae from emp
 where ename like '%LL%';
 ```
 
-> Name start with 'J' and ends with 'S'
+- **Name start with 'J' and ends with 'S'**
 ```sql
 select ename from emp 
 where ename like 'J%S';
 ```
 
+--- 
 - **Display nth row**
 ```sql
 -- assume nth row as 4th row
@@ -129,7 +130,7 @@ select * from (
 
 ---
 
-- **Union vs Union all**
+### Union vs Union all
 <br>
 can be used for single or multiple columns of same data type
 
@@ -146,8 +147,8 @@ select ename from emp2;
 
 ---
 
-- **Inner Join**
-
+### Inner Join
+<br>
 ```sql
 select ename, e.deptno, sal 
 from emp e, dept d
@@ -172,7 +173,7 @@ group by deptno;
 ```
 
 ---
-- **Self Join**
+### Self Join
 <br>
 Compare values of the same table
 
@@ -201,7 +202,7 @@ where e1.mgr=e2.empno and e1.hiredate<e2.hiredate;
 ```
 
 ---
-- **Left join**
+### Left join
 <br>
 
     - All rows from left side table
